@@ -3,12 +3,13 @@
 package vistas;
 
 import control.ArregloAlumno;
+import control.Validaciones;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelo.Alumno;
 
 public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
-
+    Validaciones value = new Validaciones();
     public ArregloAlumno obj;
     
     public void obtenerArreglo(ArregloAlumno x){
@@ -30,13 +31,18 @@ public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
            txtaverage.getText().equals("")){
             mensaje("Rellene todos los cuadros de texto");
         }else{
-            obj.agregarAlumno(new Alumno(Integer.parseInt(txtcode.getText()),
+            boolean control = value.validarPromedio(Double.parseDouble(txtaverage.getText()),txtsex.getText().toUpperCase().charAt(0));
+            if(control){
+                obj.agregarAlumno(new Alumno(Integer.parseInt(txtcode.getText()),
                                     txtname.getText(),
                                     txtfirstsurname.getText(),
                                     txtsecondsurname.getText(),
                                     txtsex.getText().toUpperCase().charAt(0), 
                                     Double.parseDouble(txtaverage.getText())));
-            mensaje("Datos del alumno "+txtname.getText()+" ingresados correctamente"); 
+                mensaje("Datos del alumno "+txtname.getText()+" ingresados correctamente"); 
+            }else{
+                mensaje("Ingrese los datos correctos");
+            }
         }
     }
     

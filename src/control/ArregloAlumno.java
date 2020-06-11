@@ -12,7 +12,7 @@ public class ArregloAlumno {
         indice = 0;
     }
     
-    public void agregarAlumno(Alumno x){
+    public void agregarAlumno(Alumno x){     
         if(indice == obj.length){
             ampliarArreglo();
         }
