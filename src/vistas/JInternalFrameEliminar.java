@@ -2,6 +2,7 @@
 package vistas;
 
 import control.ArregloAlumno;
+import control.Validaciones;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelo.Alumno;
@@ -9,6 +10,7 @@ import modelo.Alumno;
 public class JInternalFrameEliminar extends javax.swing.JInternalFrame {
 
     ArregloAlumno obj;
+    Validaciones value = new Validaciones();
     
     public void obtenerArreglo(ArregloAlumno x){
         this.obj = x;
@@ -74,6 +76,12 @@ public class JInternalFrameEliminar extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel8.setText("Codigo del Alumno:");
+
+        txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtbuscarKeyTyped(evt);
+            }
+        });
 
         btnbuscar.setText("Buscar");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -146,6 +154,10 @@ public class JInternalFrameEliminar extends javax.swing.JInternalFrame {
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         eliminar();
     }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void txtbuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyTyped
+        value.soloNumero(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtbuscarKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

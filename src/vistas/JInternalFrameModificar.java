@@ -2,13 +2,15 @@
 package vistas;
 
 import control.ArregloAlumno;
+import control.Validaciones;
 import javax.swing.JOptionPane;
 import modelo.Alumno;
 
 public class JInternalFrameModificar extends javax.swing.JInternalFrame {
 
     ArregloAlumno obj;
-            
+    Validaciones value = new Validaciones();   
+    
     public void obtenerArreglo(ArregloAlumno x){
         this.obj = x;
     }
@@ -93,11 +95,29 @@ public class JInternalFrameModificar extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
+        txtcode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcodeKeyTyped(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Codigo:");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setText("Nombre:");
+
+        txtname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnameKeyTyped(evt);
+            }
+        });
+
+        txtfirstsurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtfirstsurnameKeyTyped(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setText("Apellido Paterno:");
@@ -105,11 +125,29 @@ public class JInternalFrameModificar extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setText("Apellido Materno:");
 
+        txtsecondsurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsecondsurnameKeyTyped(evt);
+            }
+        });
+
+        txtsex.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsexKeyTyped(evt);
+            }
+        });
+
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setText("Sexo(M/F):");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("Promedio:");
+
+        txtaverage.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtaverageKeyTyped(evt);
+            }
+        });
 
         btnbuscar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnbuscar.setText("Buscar");
@@ -214,6 +252,30 @@ public class JInternalFrameModificar extends javax.swing.JInternalFrame {
         editar();
         borrar();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtcodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcodeKeyTyped
+        value.soloNumero(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtcodeKeyTyped
+
+    private void txtnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtnameKeyTyped
+
+    private void txtfirstsurnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfirstsurnameKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtfirstsurnameKeyTyped
+
+    private void txtsecondsurnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsecondsurnameKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtsecondsurnameKeyTyped
+
+    private void txtsexKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsexKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtsexKeyTyped
+
+    private void txtaverageKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtaverageKeyTyped
+        value.soloNumero(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtaverageKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

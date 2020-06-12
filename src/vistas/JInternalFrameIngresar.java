@@ -22,7 +22,6 @@ public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
     }
 
     public void ingresar(){
-        
         if(txtcode.getText().equals("") || 
            txtname.getText().equals("") || 
            txtfirstsurname.getText().equals("") || 
@@ -31,7 +30,7 @@ public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
            txtaverage.getText().equals("")){
             mensaje("Rellene todos los cuadros de texto");
         }else{
-            boolean control = value.validarPromedio(Double.parseDouble(txtaverage.getText()),txtsex.getText().toUpperCase().charAt(0));
+            boolean control = value.validar(Double.parseDouble(txtaverage.getText()),txtsex.getText().toUpperCase().charAt(0));
             if(control){
                 obj.agregarAlumno(new Alumno(Integer.parseInt(txtcode.getText()),
                                     txtname.getText(),
@@ -128,6 +127,42 @@ public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("Promedio:");
 
+        txtcode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcodeKeyTyped(evt);
+            }
+        });
+
+        txtname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnameKeyTyped(evt);
+            }
+        });
+
+        txtfirstsurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtfirstsurnameKeyTyped(evt);
+            }
+        });
+
+        txtsecondsurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsecondsurnameKeyTyped(evt);
+            }
+        });
+
+        txtsex.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsexKeyTyped(evt);
+            }
+        });
+
+        txtaverage.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtaverageKeyTyped(evt);
+            }
+        });
+
         TextArea.setColumns(20);
         TextArea.setRows(5);
         jScrollPane1.setViewportView(TextArea);
@@ -141,6 +176,12 @@ public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setText("Codigo del Alumno:");
+
+        txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtbuscarKeyTyped(evt);
+            }
+        });
 
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +298,34 @@ public class JInternalFrameIngresar extends javax.swing.JInternalFrame {
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
         buscar();
     }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void txtcodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcodeKeyTyped
+        value.soloNumero(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtcodeKeyTyped
+
+    private void txtnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtnameKeyTyped
+
+    private void txtfirstsurnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfirstsurnameKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtfirstsurnameKeyTyped
+
+    private void txtsecondsurnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsecondsurnameKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtsecondsurnameKeyTyped
+
+    private void txtsexKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsexKeyTyped
+        value.soloLetras(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtsexKeyTyped
+
+    private void txtaverageKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtaverageKeyTyped
+        value.soloNumero(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtaverageKeyTyped
+
+    private void txtbuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyTyped
+        value.soloNumero(evt.getKeyChar(), evt);
+    }//GEN-LAST:event_txtbuscarKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

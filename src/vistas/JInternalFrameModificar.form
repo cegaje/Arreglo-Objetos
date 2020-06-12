@@ -118,6 +118,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="txtcode">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtcodeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -136,8 +139,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtname">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtnameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtfirstsurname">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtfirstsurnameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -156,8 +165,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtsecondsurname">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtsecondsurnameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtsex">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtsexKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -176,6 +191,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtaverage">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtaverageKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnbuscar">
       <Properties>
